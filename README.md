@@ -1,7 +1,9 @@
 
-# Tic Tac Toe
+# Restaurant Page
 
-A
+IN PROGRESS 
+
+The purpose of this project was to use and learn webpack using dynamic DOM manipulation using JavaScript alone to generate entire website contents
 
 [Check it](https://jmilll.github.io/restaurant-page/)
 
@@ -19,7 +21,7 @@ A
 
 ## Motivation
 
-The purpose of this project was to learn and understand object oriented programming using function factories and modules.
+The purpose of this project was to use and learn webpack using dynamic DOM manipulation using JavaScript alone to generate entire website contents
 
 ## Technologies Used
 
