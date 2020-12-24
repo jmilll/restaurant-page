@@ -1,65 +1,56 @@
 //for packaging,  turn imports on
-//import './normalize.css';
-//import './style.css';
+import './normalize.css';
+import './style.css';
+import loadHeader from './module/header';
+import loadFooter from './module/footer';
+import loadHome from './module/home';
+import loadBeers from './module/beers';
+import loadContact from './module/contact';
 
 console.log('package test')
 
-function createHeader() {
-    const content = document.getElementById('content');
-    const newHeader = document.createElement('div');
-    
-    newHeader.setAttribute('class', 'header');
-        const newList = document.createElement('ul');
-        newList.setAttribute('class', 'menu');
-            const newListLogo = document.createElement('li');
-            newListLogo.setAttribute('class', 'logo');
-                const LinkLogo = document.createElement('a');
-                LinkLogo.href = '#';
-                LinkLogo.innerHTML = 'URBANREST';
-    
-            const newListHome = document.createElement('li');
-            newListHome.setAttribute('class', 'item');
-                const LinkHome = document.createElement('a');
-                LinkHome.href = '#';
-                LinkHome.innerHTML = 'Home';
-    
-            const newListBeers = document.createElement('li');
-            newListBeers.setAttribute('class', 'item');
-                const LinkBeers = document.createElement('a');
-                LinkBeers.href = '#';
-                LinkBeers.innerHTML = 'Beers';
-    
-            const newListContact = document.createElement('li');
-            newListContact.setAttribute('class', 'item');
-                const LinkContact = document.createElement('a');
-                LinkContact.href = '#';
-                LinkContact.innerHTML = 'Contact';
+init();
 
-    content.appendChild(newHeader);
-        newHeader.appendChild(newList);
-            newList.appendChild(newListLogo);
-                newListLogo.appendChild(LinkLogo);
-            newList.appendChild(newListHome);
-                newListHome.appendChild(LinkHome);
-            newList.appendChild(newListBeers);
-                newListBeers.appendChild(LinkBeers);
-            newList.appendChild(newListContact);
-                newListContact.appendChild(LinkContact);
+function addNav() {
+    const homeBtn = document.querySelectorAll('.home');
+    const beersBtn = document.querySelectorAll('.beers');
+    const contactBtn = document.querySelectorAll('.contact');
+  
+    //homeBtn.addEventListener('click', loadHome);
+    homeBtn.forEach(b => b.addEventListener('click', loadHome));
+    //beersBtn.addEventListener('click', loadBeers);
+    beersBtn.forEach(b => b.addEventListener('click', loadBeers));
+    //contactBtn.addEventListener('click', loadContact);
+    contactBtn.forEach(b => b.addEventListener('click', loadContact));
+}
+
+function init() {
+    loadHeader();
+    loadHome();
+    loadFooter();
+
+    addNav();
 }
 
 
 
+function addNav2() {
+    const homeBtn = document.querySelectorAll('.home');
+    const beersBtn = document.querySelectorAll('.beers');
+    const contactBtn = document.querySelectorAll('.contact');
+  
+    //homeBtn.addEventListener('click', loadHome);
+    homeBtn.forEach(b => b.addEventListener('click', init2(loadHome())));
+    //beersBtn.addEventListener('click', loadBeers);
+    beersBtn.forEach(b => b.addEventListener('click', init2(loadBeers())));
+    //contactBtn.addEventListener('click', loadContact);
+    contactBtn.forEach(b => b.addEventListener('click', init2(loadContact())));
+}
 
-content.appendChild(newHeroImage);
+function init2(page) {
+    loadHeader();
+    page;
+    loadFooter();
 
-content.appendChild(newCopy);
-
-content.appendChild(newFooter);
-
-
-
-
-    a = document.createElement('a');
-    a.href =  'google.com'; // Insted of calling setAttribute 
-    a.innerHTML = "Link" // <a>INNER_TEXT</a>
-
+    addNav2();
+}
