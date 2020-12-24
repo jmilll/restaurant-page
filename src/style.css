@@ -48,6 +48,13 @@ div.footer ul.menu{
     display: flex;
     padding: 0;
 }
+
+div.footer ul.menu li.item {
+    padding: 0px 20px;
+    order: 2;
+    display: block;
+    width: auto;
+}
 a {
     color: white;
     text-decoration: none;
