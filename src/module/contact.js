@@ -4,97 +4,91 @@
 
 //console.log('package test')
 
-function createHeader() {
-    const content = document.getElementById('content');
-    const newHeader = document.createElement('div');
-    
-    newHeader.setAttribute('class', 'header');
-        const newList = document.createElement('ul');
-        newList.setAttribute('class', 'menu');
-            const newListLogo = document.createElement('li');
-            newListLogo.setAttribute('class', 'logo');
-                const LinkLogo = document.createElement('a');
-                LinkLogo.href = '#';
-                LinkLogo.innerHTML = 'URBANREST';
-    
-            const newListHome = document.createElement('li');
-            newListHome.setAttribute('class', 'item');
-                const LinkHome = document.createElement('a');
-                LinkHome.setAttribute('class', 'home');
-                LinkHome.href = '#';
-                LinkHome.innerHTML = 'Home';
-    
-            const newListBeers = document.createElement('li');
-            newListBeers.setAttribute('class', 'item');
-                const LinkBeers = document.createElement('a');
-                LinkBeers.setAttribute('class', 'beers');
-                LinkBeers.href = '#';
-                LinkBeers.innerHTML = 'Beers';
-    
-            const newListContact = document.createElement('li');
-            newListContact.setAttribute('class', 'item');
-                const LinkContact = document.createElement('a');
-                LinkContact.setAttribute('class', 'contact');
-                LinkContact.href = '#';
-                LinkContact.innerHTML = 'Contact';
+//'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
 
-    content.appendChild(newHeader);
-        newHeader.appendChild(newList);
-            newList.appendChild(newListLogo);
-                newListLogo.appendChild(LinkLogo);
-            newList.appendChild(newListHome);
-                newListHome.appendChild(LinkHome);
-            newList.appendChild(newListBeers);
-                newListBeers.appendChild(LinkBeers);
-            newList.appendChild(newListContact);
-                newListContact.appendChild(LinkContact);
+function listItem(x) {
+    const item = document.createElement('li');
+    item.textContent = x
+    return item;
 }
 
+const days = [
+    listItem('Monday'),
+    listItem('Tuesday'),
+    listItem('Wednesday'),
+    listItem('Thursday'),
+    listItem('Friday'),
+    listItem('Saturday'),
+    listItem('Sunday')
+]
 
-
-function createFooter() {
-    const content = document.getElementById('content');
-    const newFooter = document.createElement('div');
-
-    newFooter.setAttribute('class', 'footer');
-        const newList = document.createElement('ul');
-        newList.setAttribute('class', 'menu');
-            const newListHome = document.createElement('li');
-            newListHome.setAttribute('class', 'item');
-                const LinkHome = document.createElement('a');
-                LinkHome.setAttribute('class', 'home');
-                LinkHome.href = '#';
-                LinkHome.innerHTML = 'Home';
-
-            const newListBeers = document.createElement('li');
-            newListBeers.setAttribute('class', 'item');
-                const LinkBeers = document.createElement('a');
-                LinkBeers.setAttribute('class', 'beers');
-                LinkBeers.href = '#';
-                LinkBeers.innerHTML = 'Beers';
-
-            const newListContact = document.createElement('li');
-            newListContact.setAttribute('class', 'item');
-                const LinkContact = document.createElement('a');
-                LinkContact.setAttribute('class', 'contact');
-                LinkContact.href = '#';
-                LinkContact.innerHTML = 'Contact';
-
-    content.appendChild(newFooter);
-        newFooter.appendChild(newList);
-            newList.appendChild(newListHome);
-                newListHome.appendChild(LinkHome);
-            newList.appendChild(newListBeers);
-                newListBeers.appendChild(LinkBeers);
-            newList.appendChild(newListContact);
-                newListContact.appendChild(LinkContact);
-}
+const times = [
+    listItem('Closed'),
+    listItem('Closed'),
+    listItem('4pm - 8pm'),
+    listItem('4pm - 8pm'),
+    listItem('4pm - 8pm'),
+    listItem('12pm - 8pm'),
+    listItem('12pm - 8pm')
+]
 
 function loadContact() {
-    createHeader()
-    //createMain()
-    //createCopy()
-    createFooter() 
+    const content = document.getElementById('content');
+
+    const contact = document.createElement('div');
+    contact.classList.add('contact');
+
+    const locationImage = document.createElement('div');
+    locationImage.classList.add('beer-image');
+        const imageMain = document.createElement('img');
+        imageMain.setAttribute('class', 'fit');
+        imageMain.src = 'https://www.gannett-cdn.com/media/2017/07/05/DetroitFreeP/DetroitFreePress/636348673042962222-urbanrest-ferndale-beer-02.JPG?width=2560';
+        imageMain.alt = 'brewery-exterior';
+    const map = document.createElement('div');
+    map.classList.add('map');
+        const gmap = document.createElement('iframe');
+        gmap.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.11102905025!2d-83.12969608422951!3d42.46792723627473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824cf0406c18657%3A0xe8bcacd6ea23488f!2sUrbanrest+Brewing+Company!5e0!3m2!1sen!2sus!4v1547049317209';
+        gmap.alt = 'google-map-location';
+    const info = document.createElement('div');
+    info.classList.add('info');
+        const location = document.createElement('div');
+        location.classList.add('location');
+            const name = document.createElement('h3');
+            name.textContent = 'Urbanrest Brewing Company';
+            const loc = document.createElement('p');
+            loc.textContent = '2615 Wolcott St, Ferndale, MI 48220';
+
+        const title = document.createElement('h3');
+        title.textContent = 'Taproom Hours'
+
+        const hours = document.createElement('div');
+        hours.classList.add('hours');
+            const day = document.createElement('ul');
+            day.classList.add('days');
+
+            const time = document.createElement('ul');
+            time.classList.add('times');
+
+
+    content.appendChild(contact);
+        contact.appendChild(locationImage);
+            locationImage.appendChild(imageMain);
+        contact.appendChild(map);
+            map.appendChild(gmap);
+        contact.appendChild(info);
+            info.appendChild(location);
+                location.appendChild(name);
+                location.appendChild(loc);
+            info.appendChild(title);
+            info.appendChild(hours);
+                hours.appendChild(day);
+                    days.forEach((d) => {
+                        day.appendChild(d);
+                    });
+                hours.appendChild(time);
+                    times.forEach((t) => {
+                        time.appendChild(t);
+                    });
 }
 
 export default loadContact;
