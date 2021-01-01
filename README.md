@@ -1,34 +1,34 @@
 
-# Restaurant Page
+# Mock Restaurant Page
+A brewery page created using JavaScript and Webpack.
+It is a real brewery that I pulled inspiration, text, and images from for this proof of knowledge / personal learning project.
 
-IN PROGRESS 
-
-The purpose of this project was to use and learn webpack using dynamic DOM manipulation using JavaScript alone to generate entire website contents
+The purpose of this project was to use and learn webpack. Using dynamic DOM manipulation with JavaScript alone to generate entire website contents.
 
 [Check it](https://jmilll.github.io/restaurant-page/)
 
 ## Example
 
-![Default Page](assets/demo1.png)
+![Default Page](assets/home.png)
 
-![Add Book](assets/demo2.png)
+![Contact Page](assets/contact.png)
 
-[Play Here](https://jmilll.github.io/restaurant-page/)
+[Check it](https://jmilll.github.io/restaurant-page/)
 
 ## Features
 
-* P
+* Webpack Bundle
 
 ## Motivation
 
-The purpose of this project was to use and learn webpack using dynamic DOM manipulation using JavaScript alone to generate entire website contents
+The purpose of this project was to use and learn webpack. Using dynamic DOM manipulation with JavaScript alone to generate entire website contents.
 
 ## Technologies Used
 
+* Webpack
 * JavaScript
-* Function Factories
-* Modules
 * HTML / CSS
+* Flexbox
 
 ## Acknowledgements
 
