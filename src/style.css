@@ -1,8 +1,6 @@
-/**/
 :root {
     --background-color: rgb(245, 245, 245); /*whitesmoke*/
 }
-
 html {
     min-height: 100%;
 }
@@ -21,13 +19,14 @@ body {
 }
 #content {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
+
+/* -- HEADER / NAV -- */
 .header {
     background: #222;
     padding: 0 25px;
 }
-
 div.header ul.menu {   
     list-style-type: none;
     margin: 0;
@@ -37,7 +36,6 @@ div.header ul.menu {
     display: flex;
     align-content: center;
 }
-
 .footer {
     margin-top: 3em;
     background: #222;
@@ -45,24 +43,20 @@ div.header ul.menu {
     justify-content: center;
     width: 100%;
 }
-
 div.footer ul.menu{
     display: flex;
     padding: 0;
 }
-
 div.footer ul.menu li.item {
     padding: 0px 20px;
     order: 2;
     display: block;
     width: auto;
 }
-
 a {
     color: white;
     text-decoration: none;
 }
-
 .logo {
     font-size: 20px;
     padding: 7.5px 10px 7.5px 0;
@@ -75,14 +69,12 @@ a {
     display: block;
     width: auto;
 }
-
 li a:hover {
     position: relative;
     overflow: visible;
     z-index: 10;
     transition: .2s;
 }
-
 li a:hover:before {
     content: "";
     left: -6px;
@@ -96,6 +88,7 @@ li a:hover:before {
 /* -- HOME PAGE -- */
 .main-image {
     height: 80%;
+    position: relative;
 }
 .fit {
     border-style: none;
@@ -116,19 +109,17 @@ li a:hover:before {
     z-index: 1;
     left: 0;
     width: 100%;
-    height: 80%;
+    height: 100%;
 }
 .copy{
     width: 50%;
     min-width: 230px;
     margin: 0 auto;
 }
-
 p {
     padding-bottom: .5em;
     line-height: 1.2em;
 }
-
 
 /* -- BEER MENU -- */
 .beer-list {
@@ -138,38 +129,32 @@ p {
     align-content: flex-start;
     justify-content: space-evenly;
 }
-
 .beer-image{
     width: 100%;
     height: 300px;
     background: #05a5be;
 }
-
 .beer-item {
     margin: 1em 2em;
     max-width: 50%;
     min-width: 250px;
 }
-
 .beer-name {
     margin: 0px;
     font-weight: 900;
     letter-spacing: 1px;
 }
-
 .beer-style {
     margin: 0px;
     font-size: .9em;
     font-weight: 700;
     letter-spacing: 1px;
 }
-
 .beer-abv {
     margin: 0px;
     font-size: .9em;
     font-weight: 700;
 }
-
 .beer-description {
     margin: .8em 0px 0px 0px;
     padding: 0;
@@ -178,20 +163,17 @@ p {
 /* -- CONTACT -- */
 .contact {
     min-height: 90vh;
-    margin: 50px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: flex-start;
 }
-
 .map {
     width: 50%;
     min-width: 250px;
     min-height: 250px;
     margin: 4em 2em;
 }
-
 iframe {
     width: 100%;
     height: 500px;
@@ -199,7 +181,6 @@ iframe {
     border: 6px solid #555;
     border-radius: .3em;
 }
-
 .info {
     min-width: 250px;
     margin: 1em 2em;
@@ -207,183 +188,29 @@ iframe {
     flex-flow: column nowrap;
     justify-content: center;
 }
-
 div.info h3{
     margin: .6em 0;
     border-bottom: 2px solid;
 }
-
 .hours {
     display: flex;
     flex-flow: row nowrap;
 }
-
 .days {
     margin: 0px;
     list-style: none;
     padding: 0px;
 }
-
 ul.days li {
     font-weight: 600;
     margin-right: 2em;
     line-height: 1.8em;
 }
-
 .times {
     margin: 0px;
     list-style: none;
     padding: 0px;
 }
-
 ul.times li {
     line-height: 1.8em;
 }
-/*
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.11102905025!2d-83.12969608422951!3d42.46792723627473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824cf0406c18657%3A0xe8bcacd6ea23488f!2sUrbanrest+Brewing+Company!5e0!3m2!1sen!2sus!4v1547049317209" width="600" height="450" frameborder="0" style="border: 0px; pointer-events: none;" allowfullscreen=""></iframe>
-
-.contact {
-    min-height: 90vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: flex-start;
-}
-
-.hours {
-    width: 20%;
-    min-width: 200px;
-    margin: 3em 2em 1em 2em;
-
-    display: flex;
-}
-
-.taproom-image {
-    background: blue;
-    height: 220px;
-    width: 100%;
-    margin-right: 2em;
-}
-
-dl {
-    min-width: 160px;
-
-    width: 50%;
-    margin: 0px;
-}
-
-dt {
-    float: left;
-    padding: .25em;s
-    clear: left;
-}
-dd {
-    float: right;
-    padding: .25em 0;
-}
-dl:after {content:"";display:table;clear:both;}
-
-.location {
-    width: 40%;
-    min-width: 200px;
-    margin: 1em 2em;
-}
-
-iframe {
-    width: 100%;
-    min-height: 400px;
-    height: 50%;
-    border: none;
-    pointer-events: none;
-}
-*/
-
-/* Mobile menu */
-/*
-.menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-.menu li a {
-    display: block;
-    padding: 15px 5px;
-}
-.item {
-    order: 3;
-    width: 100%;
-    text-align: center;
-    display: none;
-}
-.active .item {
-    display: block;
-}
-*/
-
-/* Tablet menu */
-/*
-@media all and (min-width: 700px) {
-    .menu {
-        justify-content: center;
-    }
-    .logo {
-        flex: 1;
-    }
-    .item.button {
-        width: auto;
-        order: 1;
-        display: block;
-    }
-    .toggle {
-        flex: 1;
-        text-align: right;
-        order: 2;
-    }
-}
-*/
-/* Desktop menu */
-/*
-@media all and (min-width: 960px) {
-    .menu {
-        align-items: flex-start;     
-        flex-wrap: nowrap;
-        background: none;
-    }
-    .logo {
-        order: 0;
-    }
-    .item {
-        order: 1;
-        position: relative;
-        display: block; 
-        width: auto;
-    }
-    .toggle {
-        display: none;
-    }
-}
-/*
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li {
-    float: right;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-}*/
