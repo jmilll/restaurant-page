@@ -1,4 +1,3 @@
-//for packaging,  turn imports on
 import './normalize.css';
 import './style.css';
 import loadHeader from './module/header';
@@ -7,50 +6,75 @@ import loadHome from './module/home';
 import loadBeers from './module/beers';
 import loadContact from './module/contact';
 
-console.log('package test')
+loadHeader();
+loadHome();
+loadFooter();
+initFooterBtn()
 
-init();
+function clear() {
+    const container = document.getElementById('content');
+    let conLength = container.children.length;
 
-function addNav() {
-    const homeBtn = document.querySelectorAll('.home');
-    const beersBtn = document.querySelectorAll('.beers');
-    const contactBtn = document.querySelectorAll('.contact');
-  
-    //homeBtn.addEventListener('click', loadHome);
-    homeBtn.forEach(b => b.addEventListener('click', loadHome));
-    //beersBtn.addEventListener('click', loadBeers);
-    beersBtn.forEach(b => b.addEventListener('click', loadBeers));
-    //contactBtn.addEventListener('click', loadContact);
-    contactBtn.forEach(b => b.addEventListener('click', loadContact));
+    // remove each element other than header
+    while (conLength > 1) {
+        container.removeChild(container.children[1])
+        conLength--;
+    } 
 }
 
-function init() {
-    loadHeader();
+// Header buttons
+const logoBtn = document.querySelector('.logo');
+logoBtn.onclick = () => {
+    clear();
     loadHome();
     loadFooter();
+    initFooterBtn()
+};
 
-    addNav();
-}
-
-
-
-function addNav2() {
-    const homeBtn = document.querySelectorAll('.home');
-    const beersBtn = document.querySelectorAll('.beers');
-    const contactBtn = document.querySelectorAll('.contact');
-  
-    //homeBtn.addEventListener('click', loadHome);
-    homeBtn.forEach(b => b.addEventListener('click', init2(loadHome())));
-    //beersBtn.addEventListener('click', loadBeers);
-    beersBtn.forEach(b => b.addEventListener('click', init2(loadBeers())));
-    //contactBtn.addEventListener('click', loadContact);
-    contactBtn.forEach(b => b.addEventListener('click', init2(loadContact())));
-}
-
-function init2(page) {
-    loadHeader();
-    page;
+const homeBtn = document.getElementById('home');
+homeBtn.onclick = () => {
+    clear();
+    loadHome();
     loadFooter();
+    initFooterBtn()
+};
 
-    addNav2();
+const beersBtn = document.getElementById('beers');
+beersBtn.onclick = () => {
+    clear();
+    loadBeers();
+    loadFooter();
+    initFooterBtn()
+};
+
+const contactBtn = document.getElementById('contact');
+contactBtn.onclick = () => {
+    clear();
+    loadContact();
+    loadFooter();
+    initFooterBtn()
+};
+
+//Footer buttons
+function initFooterBtn() {
+    const homeBtnF = document.getElementById('home-footer');
+    homeBtnF.onclick = () => {
+        clear();
+        loadHome();
+        loadFooter();
+    };
+
+    const beersBtnF = document.getElementById('beers-footer');
+    beersBtnF.onclick = () => {
+        clear();
+        loadBeers();
+        loadFooter();
+    };
+
+    const contactBtnF = document.getElementById('contact-footer');
+    contactBtnF.onclick = () => {
+        clear();
+        loadContact();
+        loadFooter();
+    };
 }
