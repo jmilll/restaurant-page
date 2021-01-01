@@ -98,9 +98,9 @@ li a:hover:before {
 }
 .logo-overlay {
     position: absolute;
-    width: 70%;
-    top: 35%;
-    left: 15%;
+    width: 66%;
+    top: 28%;
+    left: 17%;
     z-index: 2;
 }
 .black-overlay {
