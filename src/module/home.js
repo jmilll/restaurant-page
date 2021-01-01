@@ -1,9 +1,3 @@
-//for packaging,  turn imports on
-//import './normalize.css';
-//import './style.css';
-
-//console.log('package test')
-
 function createMain() {
     const content = document.getElementById('content');
     const newMain = document.createElement('div');
@@ -11,11 +5,11 @@ function createMain() {
     newMain.setAttribute('class', 'main-image');
         const imageMain = document.createElement('img');
             imageMain.setAttribute('class', 'fit');
-            imageMain.src = '../src/tap-room.jpg';
+            imageMain.src = '../src/images/tap-room.jpg';
             imageMain.alt = 'taproom-photo';
         const imageLogo = document.createElement('img');
             imageLogo.setAttribute('class', 'logo-overlay');
-            imageLogo.src = '../src/logo_white.png';
+            imageLogo.src = '../src/images/logo_white.png';
             imageLogo.alt = 'white-logo';
         const blackScreen = document.createElement('span');
             blackScreen.setAttribute('class', 'black-overlay');
@@ -33,7 +27,7 @@ function createCopy() {
     newCopy.setAttribute('class', 'copy');
         const headTwo = document.createElement('h2');
             headTwo.textContent = 'The Taproom at Urbanrest';
-            t = `<p>Our spacious taproom at Urbanrest has a limited capacity, and operates on a first-come, first-served basis. We believe its the only fair way to do things.
+            const tapDesc = `<p>Our spacious taproom at Urbanrest has a limited capacity, and operates on a first-come, first-served basis. We believe its the only fair way to do things.
             </p>
             <p>Our space is designed to bring the consumer in to the brewing process while also providing a comfortable atmosphere to spend time with friends, engage in conversation and enjoy the fruits of our brewing labor.
             </p>
@@ -50,7 +44,7 @@ function createCopy() {
 
     content.appendChild(newCopy);
         newCopy.appendChild(headTwo);
-        newCopy.insertAdjacentHTML("beforeend", t);
+        newCopy.insertAdjacentHTML("beforeend", tapDesc);
 }
 
 function loadHome() {

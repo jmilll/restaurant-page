@@ -1,11 +1,3 @@
-//for packaging,  turn imports on
-//import './normalize.css';
-//import './style.css';
-
-//console.log('package test')
-
-//'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
-
 function listItem(x) {
     const item = document.createElement('li');
     item.textContent = x
@@ -42,7 +34,7 @@ function loadContact() {
     locationImage.classList.add('beer-image');
         const imageMain = document.createElement('img');
         imageMain.setAttribute('class', 'fit');
-        imageMain.src = 'https://www.gannett-cdn.com/media/2017/07/05/DetroitFreeP/DetroitFreePress/636348673042962222-urbanrest-ferndale-beer-02.JPG?width=2560';
+        imageMain.src = '../src/images/exterior.jpeg';
         imageMain.alt = 'brewery-exterior';
     const map = document.createElement('div');
     map.classList.add('map');

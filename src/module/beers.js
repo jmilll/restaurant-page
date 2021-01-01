@@ -1,14 +1,3 @@
-//for packaging,  turn imports on
-//import './normalize.css';
-//import './style.css';
-
-//console.log('package test')
-
-
-
-
-
-
 function createBeer(name, style, abv, description) {
 
     const newBeer = document.createElement('div');
@@ -46,7 +35,7 @@ function loadBeers() {
     
     const pic = document.createElement('img')
     pic.classList.add('fit');
-    pic.src = 'https://content.kegworks.com/hubfs/Imported_Blog_Media/beer-glassed-fb-2.jpg';
+    pic.src = '../src/images/beer-glass.jpg';
     pic.alt = 'beers-lined-up';
 
     const beerList = document.createElement('div');
@@ -82,10 +71,5 @@ function loadBeers() {
         beerList.appendChild(beer);
     });
 }
-/*
-function loadBeers() {
-    //createMain()
-    //createCopy()
-}
-*/
+
 export default loadBeers;
