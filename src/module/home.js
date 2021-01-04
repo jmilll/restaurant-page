@@ -13,7 +13,7 @@ function createMain() {
             imageLogo.setAttribute('class', 'logo-overlay');
             //imageLogo.src = '../src/images/logo_white.png';//change for gh-pages to load img
             //https://raw.githubusercontent.com/jmilll/restaurant-page/master/src/images/logo_white.png
-            imageMain.src = './src/images/logo_white.png';
+            imageLogo.src = './src/images/logo_white.png';
             imageLogo.alt = 'white-logo';
         const blackScreen = document.createElement('span');
             blackScreen.setAttribute('class', 'black-overlay');
