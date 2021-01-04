@@ -34,7 +34,9 @@ function loadContact() {
     locationImage.classList.add('beer-image');
         const imageMain = document.createElement('img');
         imageMain.setAttribute('class', 'fit');
-        imageMain.src = '../src/images/exterior.jpeg';
+        //imageMain.src = '../src/images/exterior.jpeg';//change for gh-pages to load img
+        //https://raw.githubusercontent.com/jmilll/restaurant-page/master/src/images/exterior.jpeg
+        imageMain.src = './src/images/exterior.jpeg';
         imageMain.alt = 'brewery-exterior';
     const map = document.createElement('div');
     map.classList.add('map');

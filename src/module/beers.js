@@ -35,7 +35,9 @@ function loadBeers() {
     
     const pic = document.createElement('img')
     pic.classList.add('fit');
-    pic.src = '../src/images/beer-glass.jpg';
+    //pic.src = '../src/images/beer-glass.jpg';//change for gh-pages to load img
+    //https://raw.githubusercontent.com/jmilll/restaurant-page/master/src/images/beer-glass.jpg
+    pic.src = './src/images/beer-glass.jpg';
     pic.alt = 'beers-lined-up';
 
     const beerList = document.createElement('div');
